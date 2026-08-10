@@ -1,0 +1,40 @@
+{
+  "profile_header": {
+    "model": {
+      "model_id": "Qwen/Qwen3-30B-A3B", "num_layers": 48, "num_moe_layers": 48,
+      "hidden_size": 2048, "num_experts": 128, "top_k": 8,
+      "expert_intermediate_size": 768, "num_attention_heads": 32, "num_kv_heads": 4
+    },
+    "hardware": {
+      "hardware_id": "2xNVIDIA-H20-3e-NV18", "model_weight_bytes": 61064794624,
+      "kv_bytes_per_token": 98304, "activation_bytes_per_scheduled_token": 4096
+    },
+    "runtime": {
+      "runtime": "vllm", "vllm_version": "0.18.1", "precision": "bfloat16",
+      "cuda_graph": false, "max_num_batched_tokens": 4096, "max_num_seqs": 4,
+      "tensor_parallel_size": 2, "expert_parallel_size": 2,
+      "all2all_backend": "allgather_reducescatter", "expert_placement_strategy": "linear",
+      "disable_custom_all_reduce": false
+    }
+  },
+  "model_path": "/home/marongbai/profiling/Qwen3-30B-A3B",
+  "gpu_memory_utilization": 0.7,
+  "seed": 47,
+  "warmup_repeats": 3,
+  "workloads": [
+    {"batch_size": 1, "prompt_tokens": 1280, "output_tokens": 4, "repeats": 3},
+    {"batch_size": 1, "prompt_tokens": 1792, "output_tokens": 4, "repeats": 3},
+    {"batch_size": 1, "prompt_tokens": 2304, "output_tokens": 4, "repeats": 3},
+    {"batch_size": 1, "prompt_tokens": 2816, "output_tokens": 4, "repeats": 3},
+    {"batch_size": 1, "prompt_tokens": 3328, "output_tokens": 4, "repeats": 3},
+    {"batch_size": 1, "prompt_tokens": 3840, "output_tokens": 4, "repeats": 3},
+    {"batch_size": 2, "prompt_token_lengths": [8, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 2, "prompt_token_lengths": [64, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 2, "prompt_token_lengths": [256, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 2, "prompt_token_lengths": [1024, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 3, "prompt_token_lengths": [8, 512, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 3, "prompt_token_lengths": [64, 2048, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 4, "prompt_token_lengths": [8, 64, 512, 4096], "output_tokens": 4, "repeats": 3},
+    {"batch_size": 4, "prompt_token_lengths": [32, 256, 2048, 4096], "output_tokens": 4, "repeats": 3}
+  ]
+}

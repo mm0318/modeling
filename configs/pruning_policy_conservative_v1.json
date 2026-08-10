@@ -1,0 +1,8 @@
+{
+  "capacity_action": "needs_replica_evaluation",
+  "max_memory_utilization": 0.95,
+  "max_replicas": null,
+  "min_coverage": 0.8,
+  "pareto_mode": "conservative_interval",
+  "slo_policy": "risk_averse_upper_bound"
+}

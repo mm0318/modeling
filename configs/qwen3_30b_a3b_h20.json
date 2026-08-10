@@ -1,0 +1,29 @@
+{
+  "model": {
+    "model_id": "Qwen/Qwen3-30B-A3B",
+    "num_layers": 48,
+    "hidden_size": 2048,
+    "num_experts": 128,
+    "top_k": 8,
+    "expert_intermediate_size": 768,
+    "num_attention_heads": 32,
+    "num_kv_heads": 4,
+    "num_moe_layers": 48
+  },
+  "hardware": {
+    "hardware_id": "NVIDIA-H20",
+    "model_weight_bytes": 61064794624,
+    "kv_bytes_per_token": 98304,
+    "activation_bytes_per_scheduled_token": 4096
+  },
+  "runtime": {
+    "runtime": "vllm",
+    "vllm_version": "0.18.1",
+    "precision": "bfloat16",
+    "cuda_graph": false,
+    "max_num_batched_tokens": 8192,
+    "max_num_seqs": 32,
+    "tensor_parallel_size": 1,
+    "expert_parallel_size": 1
+  }
+}

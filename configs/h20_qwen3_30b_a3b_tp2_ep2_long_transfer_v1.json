@@ -1,0 +1,20 @@
+{
+  "profile_header": {
+    "model": {"model_id": "Qwen/Qwen3-30B-A3B", "architecture": "moe", "num_layers": 48,
+      "num_moe_layers": 48, "hidden_size": 2048, "num_experts": 128, "top_k": 8,
+      "expert_intermediate_size": 768, "num_attention_heads": 32, "num_kv_heads": 4},
+    "hardware": {"hardware_id": "2xNVIDIA-H20-3e-NV18", "model_weight_bytes": 61064794624,
+      "kv_bytes_per_token": 98304, "activation_bytes_per_scheduled_token": 4096},
+    "runtime": {"runtime": "vllm", "vllm_version": "0.18.1", "precision": "bfloat16",
+      "cuda_graph": false, "max_num_batched_tokens": 8192, "max_num_seqs": 8,
+      "tensor_parallel_size": 2, "expert_parallel_size": 2,
+      "all2all_backend": "allgather_reducescatter", "expert_placement_strategy": "linear",
+      "disable_custom_all_reduce": false, "profiling_repeats": 5}
+  },
+  "model_path": "/home/marongbai/profiling/Qwen3-30B-A3B", "gpu_memory_utilization": 0.8,
+  "seed": 0, "warmup_repeats": 1,
+  "workloads": [
+    {"batch_size": 1, "prompt_tokens": 16384, "output_tokens": 2, "repeats": 1},
+    {"batch_size": 1, "prompt_tokens": 32768, "output_tokens": 2, "repeats": 1}
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "profile_header": {
+    "model": {"model_id": "Qwen/Qwen3-8B", "architecture": "dense", "num_layers": 36,
+      "hidden_size": 4096, "intermediate_size": 12288, "num_attention_heads": 32, "num_kv_heads": 8},
+    "hardware": {"hardware_id": "2xNVIDIA-H20-3e-NV18", "model_weight_bytes": 16381516776,
+      "kv_bytes_per_token": 147456, "activation_bytes_per_scheduled_token": 8192},
+    "runtime": {"runtime": "vllm", "vllm_version": "0.18.1", "precision": "bfloat16",
+      "cuda_graph": false, "max_num_batched_tokens": 8192, "max_num_seqs": 8,
+      "tensor_parallel_size": 2, "expert_parallel_size": 1, "disable_custom_all_reduce": false,
+      "profiling_repeats": 2}
+  },
+  "model_path": "/home/marongbai/profiling/Qwen3-8B", "gpu_memory_utilization": 0.8,
+  "seed": 0, "warmup_repeats": 1,
+  "workloads": [
+    {"batch_size": 1, "prompt_tokens": 8, "output_tokens": 2, "repeats": 1},
+    {"batch_size": 1, "prompt_tokens": 128, "output_tokens": 2, "repeats": 1},
+    {"batch_size": 1, "prompt_tokens": 1024, "output_tokens": 2, "repeats": 1},
+    {"batch_size": 1, "prompt_tokens": 8192, "output_tokens": 2, "repeats": 1},
+    {"batch_size": 8, "prompt_tokens": 16, "output_tokens": 2, "repeats": 1}
+  ]
+}
